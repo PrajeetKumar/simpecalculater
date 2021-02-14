@@ -1,0 +1,136 @@
+<html>
+	<head>
+	<style>
+		body
+		{
+			background-image:url("background.jpg");
+		}
+		h1
+		{
+			text-shadow:2px 2px 2px red;
+		}
+		.box
+		{
+			height:500px;
+			width:330px;
+			margin-left:500px;
+			margin-top:80PX;
+			background-color:#64c5d6;
+			border-radius:50px;
+			box-shadow:0 4px 8px 0 rgba(0,0,0,0.4),0 6px 20px 0 rgba(0,0,0,0.1);
+			
+		}
+		.displaydesin
+		{
+			background-color:#64c5d6;
+			font-size:30px;
+			font-weight:700;
+			height:100px;
+			width:330px;
+			border:none;
+			text-align:right;
+			color:#fff;
+			border-top-left-radius:50px;
+			border-top-right-radius:50px;
+			float:right;
+			padding-right:20px;
+			outline:none;
+			
+		}
+		.buttondesin
+		{
+			width:50px;
+			height:50px;
+			color:#5E5858;
+			font-size:15px;
+			font-weight:700;
+			background:#fff;
+			border-radius:50%;
+			border:none;
+			cursor:pointer;
+			outline:none;
+			margin:20px 5px 5px 20px;
+		}
+		#equal
+		{
+			background-color:#6886c5;
+		}
+		#plus
+		{
+			background-color:#f08080;
+		}
+		#minus
+		{
+			background-color:#ffe0ac;
+		}
+		#multiply
+		{
+			background-color:#43d8c9;
+		}
+		#divide
+		{
+			background-color:#ffa41b;
+		}
+		#percent
+		{
+			background-color:#4d98ec;
+		}
+	</style>
+		<script>
+			
+			function display(data)
+			{
+				document.getElementById('r1').value+=data;
+			}
+			function solve()
+			{
+				var expr=document.getElementById('r1').value;
+				var soln=eval(expr);
+				document.getElementById('r1').value=soln;
+			}
+			function c()
+			{
+				document.getElementById('r1').value="";
+			}
+			function ce()
+			{
+				var txt=document.getElementById('r1').value;
+				txt=txt.slice(0,-1);
+				document.getElementById('r1').value=txt;
+			}
+			function percent()
+			{
+				num=document.getElementById("r1").value;
+				num=eval(num/100);
+				document.getElementById("r1").value=num;
+			}
+		</script>
+	</head>
+	<body>
+		<center><h1>Calculator</h1></center>
+		<center><h4>by:Prajeet Kumar</h4></center>
+		<div class="box">
+			<input 	type="text" id="r1" class="displaydesin"><br>
+			<button class="buttondesin" type="button" onclick="c()">C</button>
+			<button class="buttondesin" type="button" onclick="ce()">CE</button>
+			<button class="buttondesin" type="button" onclick="percent()"id="percent">%</button>
+			<button class="buttondesin" type="button" onclick="display('/')"id="divide">/</button>
+			<button class="buttondesin" type="button" onclick="display('7')">7</button>
+			<button class="buttondesin" type="button" onclick="display('8')">8</button>
+			<button class="buttondesin" type="button" onclick="display('9')">9</button>
+			<button class="buttondesin" type="button" onclick="display('*')"id="multiply">*</button><br>
+			<button class="buttondesin" type="button" onclick="display('4')">4</button>
+			<button class="buttondesin" type="button" onclick="display('5')">5</button>
+			<button class="buttondesin" type="button" onclick="display('6')">6</button>
+			<button class="buttondesin" type="button" onclick="display('-')"id="minus">-</button><br>
+			<button class="buttondesin" type="button" onclick="display('1')">1</button>
+			<button class="buttondesin" type="button" onclick="display('2')">2</button>
+			<button class="buttondesin" type="button" onclick="display('3')">3</button>
+			<button class="buttondesin" type="button" onclick="display('+')"id="plus">+</button><br>
+			<button class="buttondesin" type="button" onclick="display('.')">.</button>
+			<button class="buttondesin" type="button" onclick="display('0')">0</button>
+			<button class="buttondesin"	type="button" onclick="display('00')">00</button>
+			<button class="buttondesin" type="button" onclick="solve()" id="equal">=</button>
+		</div>
+	</body>
+</html>
